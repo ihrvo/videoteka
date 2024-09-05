@@ -1,0 +1,34 @@
+body{
+    height: 100%;
+}
+
+.table-action-col{
+    width: 7rem;
+}
+
+.vh-100-min{
+    min-height: 100vh !important;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .nav a.nav-link{
+    color: #ffffff;
+}
+
+nav .nav a.nav-link.active{
+    color: rgb(108, 117, 125);
+}
+
+.alert {
+    position: absolute;
+    left: 220px;
+    right: 0;
+    top: 90px;
+    margin: 0 auto;
+    width: fit-content;
+}
