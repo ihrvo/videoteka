@@ -33,8 +33,9 @@
                             <a href="<?= $subDir ?>/login" type="button" class="btn btn-primary me-2">Login</a>
                             <a href="<?= $subDir ?>/register" type="button" class="btn btn-warning">Sign-up</a>
                             <?php else: 
-                                echo "pozdrav " . $_SESSION['user']['ime'];
-                        endif; ?>
+                                echo "Pozdrav " . $_SESSION['user']['ime']; ?>
+                                <a href="<?= $subDir ?>/logout" type="button" class="btn btn-primary me-2">Logout</a>     
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

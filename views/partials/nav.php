@@ -18,7 +18,7 @@
 
             <div class="text-end">
                 <?php 
-                echo "pozdrav " . $_SESSION['user']['ime']; ?>
+                echo "Pozdrav " . $_SESSION['user']['ime']; ?>
                 <a href="<?= $subDir ?>/logout" type="button" class="btn btn-primary me-2">Logout</a>                
             </div>
         </div>
