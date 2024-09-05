@@ -17,17 +17,17 @@ class ??Controller
         $this->db = Database::get();
     }
 
-    public function index($subDir)
+    public function index()
     {
         
     }
 
-    public function show($subDir)
+    public function show()
     {
        
     }
 
-    public function edit($subDir)
+    public function edit()
     {
         
     }
@@ -37,7 +37,7 @@ class ??Controller
        
     }
 
-    public function create($subDir)
+    public function create()
     {
  
     }
