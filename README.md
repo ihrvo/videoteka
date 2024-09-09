@@ -1,6 +1,6 @@
 LARAVEL instalacija:
 
-1. Prvo sam instalirao PHP 8.3
+1. Prvo sam instalirao PHP 8.3 jer dok mi je bila 8.2 povuklo je Laravel 10
 
 ## Save existing php package list to packages.txt file
 sudo dpkg -l | grep php | tee packages.txt
@@ -25,7 +25,7 @@ sudo a2disconf php8.2-fpm
 ## Remove old packages
 sudo apt purge php8.2*
 
-2. Onda mi je javljalo:
+2. Onda mi je javljalo kada bi pokrenuo instalaciju sa "composer create-project laravel/laravel videoteka-laravel":
 
 # Failed to download laravel/laravel from dist: The zip extension and unzip/7z commands are both missing, skipping.
 # Your command-line PHP is using multiple ini files. Run php --ini to show them.
@@ -36,7 +36,7 @@ sudo apt purge php8.2*
 sudo apt-get install php-zip
 sudo apt-get install unzip
 
-3. onda je javljalo:
+3. onda je javljalo kada sam opet pokrenuo instalaciju:
 
 # Your requirements could not be resolved to an installable set of packages.
 
@@ -57,36 +57,41 @@ sudo apt-get install php-xml
 sudo service apache2 restart
 
 
-Zatim je instalacija prošla i pokrenuo:
+Zatim je instalacija prošla i pokrenuo sam:
 
 php artisan serve
 
-Onda sam probao spojiti na MySql bazu, ovo u biti još ne želimo PA ZASAD PRESKOČITI, ali za to je potrebno:
+Ali javljalo je greške za bazu:
 
-sudo apt-get install php-mysql
-sudo service apache2 restart
+ako je u .env namješteno da koristi sqlite 
 
-Inače se konekcija podešava u .env datoteci u rootularavel projekta (/var/www/html/algebra/ihrvo/BackendDeveloper/laravel-videoteka) ili kako je kome već path
-
-tu sam stavio 
-
+to je ovakva postavka:
 DB_CONNECTION=sqlite
 # DB_HOST=127.0.0.1
 # DB_PORT=3306
 DB_DATABASE=/var/www/html/algebra/ihrvo/BackendDeveloper/laravel-videoteka/database/database.sqlite
 # DB_USERNAME=root
 # DB_PASSWORD=
-
-i dalje nije radilo dok nisam:
+onda treba
 
 sudo apt-get install php-sqlite3
-sudo service apache2 restart
 
+
+Ako je namješteno da koristi mysql
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=videoteka
+DB_USERNAME=algebra
+DB_PASSWORD=algebra
+
+onda treba
+
+sudo apt-get install php-mysql
 
 onda je javljalo da nema tablica pa sam
 
 php artisan migrate
-
 
 i može se ako i dalje zeza:
 
